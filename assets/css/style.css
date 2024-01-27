@@ -237,6 +237,8 @@ article.active {
 .h5 {
   font-size: var(--fs-7);
   font-weight: var(--fw-500);
+  display: flex;
+  justify-content: center;
 }
 
 .article-title {
@@ -749,8 +751,9 @@ main {
 }
 
 .clients-item img {
-  width: 100%;
-  filter: grayscale(1);
+  width: 200px;
+  height: 150px;
+  border-radius: 1rem;
   transition: var(--transition-1);
 }
 
@@ -1430,8 +1433,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .testimonials-avatar-box img { width: 80px; }
 
   .testimonials-item-title {
-    margin-bottom: 10px;
-    margin-left: 95px;
+    margin-left: 120px;
   }
 
   .testimonials-text {
@@ -1474,7 +1476,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* clients */
 
   .clients-list {
-    gap: 50px;
+    gap: 100px;
     margin: 0 -30px;
     padding: 45px;
     scroll-padding-inline: 45px;
