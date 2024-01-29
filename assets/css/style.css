@@ -127,7 +127,9 @@
 
 a { text-decoration: none; }
 
-li { list-style: none; }
+li{
+  list-style-type: none;
+}
 
 img, ion-icon, a, button, time, span { display: block; }
 
@@ -832,7 +834,15 @@ main {
   line-height: 1.6;
 }
 
+.work-experience{
+  list-style-type: disc;
+  color: var(--light-gray);
 
+}
+
+.work-experience-list{
+  margin-left: 15px;
+}
 /**
  * skills 
  */
