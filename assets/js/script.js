@@ -52,63 +52,63 @@ overlay.addEventListener("click", testimonialsModalFunc);
 
 
 
-// custom select variables
-const select = document.querySelector("[data-select]");
-const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterBtn = document.querySelectorAll("[data-filter-btn]");
+// // custom select variables
+// const select = document.querySelector("[data-select]");
+// const selectItems = document.querySelectorAll("[data-select-item]");
+// const selectValue = document.querySelector("[data-selecct-value]");
+// const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+// select.addEventListener("click", function () { elementToggleFunc(this); });
 
-// add event in all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
+// // add event in all select items
+// for (let i = 0; i < selectItems.length; i++) {
+//   selectItems[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    elementToggleFunc(select);
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     elementToggleFunc(select);
+//     filterFunc(selectedValue);
 
-  });
-}
+//   });
+// }
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+// // filter variables
+// const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = function (selectedValue) {
+// const filterFunc = function (selectedValue) {
 
-  for (let i = 0; i < filterItems.length; i++) {
+//   for (let i = 0; i < filterItems.length; i++) {
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
+//     if (selectedValue === "all") {
+//       filterItems[i].classList.add("active");
+//     } else if (selectedValue === filterItems[i].dataset.category) {
+//       filterItems[i].classList.add("active");
+//     } else {
+//       filterItems[i].classList.remove("active");
+//     }
 
-  }
+//   }
 
-}
+// }
 
-// add event in all filter button items for large screen
-let lastClickedBtn = filterBtn[0];
+// // add event in all filter button items for large screen
+// let lastClickedBtn = filterBtn[0];
 
-for (let i = 0; i < filterBtn.length; i++) {
+// for (let i = 0; i < filterBtn.length; i++) {
 
-  filterBtn[i].addEventListener("click", function () {
+//   filterBtn[i].addEventListener("click", function () {
 
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue);
+//     let selectedValue = this.innerText.toLowerCase();
+//     selectValue.innerText = this.innerText;
+//     filterFunc(selectedValue);
 
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
+//     lastClickedBtn.classList.remove("active");
+//     this.classList.add("active");
+//     lastClickedBtn = this;
 
-  });
+//   });
 
-}
+// }
 
 
 
@@ -153,4 +153,24 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
 
   });
+}
+
+function downloadFile() {
+  // Create an anchor element
+  let downloadLink = document.createElement("a");
+  
+  // Set the file URL
+  downloadLink.href = "./assets/Yashwanth-Resume.pdf"; // Replace "path_to_your_file.pdf" with the actual file URL
+  
+  // Set the download attribute with the desired file name
+  downloadLink.download = "resume.pdf"; // Replace "example_file.pdf" with the desired file name
+  
+  // Append the anchor element to the body
+  document.body.appendChild(downloadLink);
+  
+  // Trigger the click event of the anchor element
+  downloadLink.click();
+  
+  // Remove the anchor element from the body
+  document.body.removeChild(downloadLink);
 }
