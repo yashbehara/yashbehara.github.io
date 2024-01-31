@@ -611,6 +611,15 @@ main {
   overflow: hidden;
 }
 
+.references-flex{
+  display: flex;
+}
+
+.references-flex a {
+  font-size: 25px;
+  color: cornflowerblue;
+  margin-left: 10px;
+}
 
 /**
  * #testimonials-modal
